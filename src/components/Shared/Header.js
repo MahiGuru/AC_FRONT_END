@@ -38,6 +38,7 @@ const Header = (props, context) => {
   const classes = useStyles();
   const loginBtnClick = e => {
     console.log('login clicked', e, context);
+    props.history.push('dashboard');
     // context.history.push('/dashboard');
   };
   const tryBtnClick = props => {
