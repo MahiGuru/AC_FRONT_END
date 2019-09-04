@@ -65,6 +65,11 @@ const Payment = props => {
   const handleClose = () => {
     setOpen(false);
   };
+  const modelFn = () => {
+    console.log('parent');
+    setOpen(false);
+    getBalance();
+  };
 
   const getBalance = async () => {
     // User clicked submit
@@ -190,7 +195,7 @@ const Payment = props => {
         <Fade in={open}>
           <div className={classes.paper}>
             <Elements>
-              <CheckoutForm amount={amount} />
+              <CheckoutForm amount={amount} modelFn={modelFn} />
             </Elements>
           </div>
         </Fade>

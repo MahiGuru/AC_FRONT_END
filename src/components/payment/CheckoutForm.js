@@ -1,6 +1,8 @@
 import React, { Component } from 'react';
 import { CardElement, injectStripe } from 'react-stripe-elements';
 import Button from '@material-ui/core/Button';
+import PaymentRequestForm from './PaymentRequestButton';
+import { Typography } from '@material-ui/core';
 
 class CheckoutForm extends Component {
   constructor(props) {
@@ -11,17 +13,20 @@ class CheckoutForm extends Component {
   async submit(ev) {
     // User clicked submit
     let { token } = await this.props.stripe.createToken({ name: 'Name' });
-    let response = await fetch('/charge', {
-      method: 'POST',
-      headers: { 'Content-Type': 'application/json' },
-      body: JSON.stringify({
-        tokenId: token.id,
-        amount: this.props.amount * 100
-      })
-    });
-    console.log(response);
-    if (response.ok) {
-      console.log('Purchase Complete!');
+    if (token) {
+      let response = await fetch('/charge', {
+        method: 'POST',
+        headers: { 'Content-Type': 'application/json' },
+        body: JSON.stringify({
+          tokenId: token.id,
+          amount: this.props.amount * 100
+        })
+      });
+      console.log(response);
+      if (response.ok) {
+        console.log('Purchase Complete!');
+        this.props.modelFn();
+      }
     }
   }
   createOptions = (fontSize, padding) => {
@@ -46,8 +51,15 @@ class CheckoutForm extends Component {
   render() {
     return (
       <div className="checkout">
-        <p>Would you like to complete the purchase?</p>
+        <Typography variant="h6" component="h6">
+          Pay through Card
+        </Typography>
+        <br />
+        <p>Would you like to complete the payment through card?</p>
+        <br />
         <CardElement />
+        <br />
+        <br />
         <Button onClick={this.submit} color="primary">
           PAY
         </Button>
