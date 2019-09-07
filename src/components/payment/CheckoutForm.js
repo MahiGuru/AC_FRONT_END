@@ -1,7 +1,6 @@
 import React, { Component } from 'react';
 import { CardElement, injectStripe } from 'react-stripe-elements';
 import Button from '@material-ui/core/Button';
-import PaymentRequestForm from './PaymentRequestButton';
 import { Typography } from '@material-ui/core';
 
 class CheckoutForm extends Component {

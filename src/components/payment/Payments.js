@@ -68,23 +68,9 @@ const Payment = props => {
   const modelFn = () => {
     console.log('parent');
     setOpen(false);
-    getBalance();
   };
 
-  const getBalance = async () => {
-    // User clicked submit
-    await fetch('/balance')
-      .then(function(response) {
-        return response.json();
-      })
-      .then(function(obj) {
-        console.log(obj);
-        setBalance(obj['pending'][0].amount / 100);
-      });
-    // if (response.ok) console.log('Purchase Complete!');
-  };
-
-  getBalance();
+  console.log('PAYMENT >>>> ', props);
   return (
     <div>
       <Header isLogged={props.isLogged}></Header>
