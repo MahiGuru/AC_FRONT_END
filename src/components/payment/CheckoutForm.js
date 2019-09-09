@@ -51,7 +51,7 @@ class CheckoutForm extends Component {
     return (
       <div className="checkout">
         <Typography variant="h6" component="h6">
-          Pay through Card
+          Pay through Card -{this.props.amount}$
         </Typography>
         <br />
         <p>Would you like to complete the payment through card?</p>
@@ -61,6 +61,9 @@ class CheckoutForm extends Component {
         <br />
         <Button onClick={this.submit} color="primary">
           PAY
+        </Button>
+        <Button onClick={this.props.modelFn} color="primary">
+          Close
         </Button>
       </div>
     );

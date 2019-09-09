@@ -10,15 +10,7 @@ import {
   dataError
 } from '../../actions/payments/balance-action';
 import Header from '../Shared/Header';
-import {
-  Typography,
-  Paper,
-  Card,
-  CardActionArea,
-  CardContent,
-  Button,
-  CardActions
-} from '@material-ui/core';
+import { Typography, Paper } from '@material-ui/core';
 import styles from './style.module.css';
 import { PayCard } from './PayCard';
 

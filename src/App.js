@@ -5,7 +5,6 @@ import { BrowserRouter as Router, Switch, Route } from 'react-router-dom';
 import Dashboard from './components/Dashboard/Dashboard';
 import { CssBaseline, Container } from '@material-ui/core';
 import { StripeProvider } from 'react-stripe-elements';
-import Payment from './components/payment/Payments';
 import Pay from './components/payment/Pay';
 
 function App() {
@@ -28,10 +27,6 @@ function App() {
                 <Route
                   path="/dashboard"
                   render={routeProps => <Dashboard {...routeProps}></Dashboard>}
-                />
-                <Route
-                  path="/payments"
-                  render={routeProps => <Payment {...routeProps}></Payment>}
                 />
                 <Route
                   path="/pay"

@@ -5,25 +5,25 @@ import {
   CardActionArea,
   CardContent,
   Button,
-  CardActions,
-  Modal,
-  Fade
+  CardActions
 } from '@material-ui/core';
 import styles from './style.module.css';
 
-import { Elements } from 'react-stripe-elements';
-import CheckoutForm from '../payment/CheckoutForm';
+import ModelCheckout from './ModelCheckout';
 
 export const PayCard = props => {
   const [open, setOpen] = React.useState(false);
   const handleOpen = amount => {
-    console.log(amount);
     setOpen(true);
   };
   const handleClose = () => {
     setOpen(false);
   };
 
+  const modelFn = () => {
+    console.log('MODELFN');
+    setOpen(false);
+  };
   return (
     <div>
       <Card className={styles.card}>
@@ -47,6 +47,14 @@ export const PayCard = props => {
           </Button>
         </CardActions>
       </Card>
+      {open ? (
+        <ModelCheckout
+          open={open}
+          handleClose={handleClose}
+          modelFn={modelFn}
+          amount={props.amount}
+        ></ModelCheckout>
+      ) : null}
     </div>
   );
 };
