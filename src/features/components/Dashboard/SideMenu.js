@@ -38,7 +38,7 @@ class SideMenu extends React.Component {
               <ListItemIcon>
                 <i className="material-icons fs2em">deck</i>
               </ListItemIcon>
-              <Link to={`/dashboard/mymeetings`}>
+              <Link to={`/dashboard/meetings`} className="link">
                 <ListItemText primary="My Meetings" />
               </Link>
             </ListItem>
@@ -49,7 +49,7 @@ class SideMenu extends React.Component {
               <ListItemIcon>
                 <i className="material-icons fs2em">adb</i>
               </ListItemIcon>
-              <Link to={`/dashboard/meetingroom`}>
+              <Link to={`/dashboard/inviterobo`} className="link">
                 <ListItemText primary="Invite ROBO" />
               </Link>
             </ListItem>
@@ -60,7 +60,7 @@ class SideMenu extends React.Component {
               <ListItemIcon>
                 <i className="material-icons fs2em">keyboard_voice</i>
               </ListItemIcon>
-              <Link to={`/dashboard/quicktest`}>
+              <Link to={`/dashboard/quicktest`} className="link">
                 <ListItemText primary="Quick Test" />
               </Link>
             </ListItem>
@@ -71,7 +71,7 @@ class SideMenu extends React.Component {
               <ListItemIcon>
                 <i className="material-icons fs2em">headset</i>
               </ListItemIcon>
-              <Link to={`/dashboard/uploadaudio`}>
+              <Link to={`/dashboard/uploadaudio`} className="link">
                 <ListItemText primary="Upload Audio" />
               </Link>
             </ListItem>
@@ -82,7 +82,7 @@ class SideMenu extends React.Component {
               <ListItemIcon>
                 <i className="material-icons fs2em">power_settings_new</i>
               </ListItemIcon>
-              <Link to={`/dashboard/logout`}>
+              <Link to={`/`} className="link">
                 <ListItemText primary="Logout" />
               </Link>
             </ListItem>

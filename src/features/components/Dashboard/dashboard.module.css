@@ -5,6 +5,9 @@
   align-items: center;
   margin: 20px;
 }
+.paper {
+  padding: 0 1em;
+}
 .box {
   padding: 10px;
   border: 1px solid #ccc;
@@ -15,4 +18,12 @@
 }
 .fs18 {
   font-size: 18px;
+}
+.formcontainer {
+  display: flex;
+  flex-wrap: wrap;
+}
+.formarea {
+  padding-top: 20px;
+  padding-bottom: 20px;
 }

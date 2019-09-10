@@ -4,7 +4,6 @@ import Backdrop from '@material-ui/core/Backdrop';
 import { Elements } from 'react-stripe-elements';
 import CheckoutForm from './CheckoutForm';
 import { Modal, Fade, makeStyles } from '@material-ui/core';
-import styles from './style.module.css';
 const useStyles = makeStyles(theme => ({
   modal: {
     display: 'flex',

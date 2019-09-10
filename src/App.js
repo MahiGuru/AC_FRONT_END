@@ -1,11 +1,11 @@
 import React from 'react';
 import './App.css';
-import Home from './components/Home/Home';
+import Home from './features/components/Home/Home';
 import { BrowserRouter as Router, Switch, Route } from 'react-router-dom';
-import Dashboard from './components/Dashboard/Dashboard';
 import { CssBaseline, Container } from '@material-ui/core';
 import { StripeProvider } from 'react-stripe-elements';
-import Pay from './components/payment/Pay';
+import Pay from './features/components/payment/Pay';
+import Dashboard from './features/components/Dashboard/Dashboard';
 
 function App() {
   return (

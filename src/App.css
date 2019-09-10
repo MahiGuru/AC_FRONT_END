@@ -34,3 +34,7 @@
 .fs2em {
   font-size: 2em;
 }
+.link {
+  text-decoration: none;
+  color: #333333;
+}

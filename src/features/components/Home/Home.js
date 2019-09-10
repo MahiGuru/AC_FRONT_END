@@ -1,8 +1,8 @@
 import React from 'react';
 
-import Header from '../Shared/Header';
-import Banner from '../Home/Banner';
-import WhyActa from '../Home/WhyActa';
+import Header from '../../../Shared/Header';
+import Banner from './Banner';
+import WhyActa from './WhyActa';
 
 class Home extends React.Component {
   constructor(props) {

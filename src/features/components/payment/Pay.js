@@ -9,7 +9,7 @@ import {
   loading,
   dataError
 } from '../../actions/payments/balance-action';
-import Header from '../Shared/Header';
+import Header from '../../../Shared/Header';
 import { Typography, Paper } from '@material-ui/core';
 import styles from './style.module.css';
 import { PayCard } from './PayCard';

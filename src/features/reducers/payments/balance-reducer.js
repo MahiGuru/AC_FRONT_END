@@ -1,4 +1,4 @@
-import { GET_BALANCE, LOADING } from '../../types/index';
+import { GET_BALANCE, LOADING } from '../../../core/types/index';
 
 export const balanceReducer = (state = {}, action) => {
   // Reducer changes state depending on the action.type we are dispatching

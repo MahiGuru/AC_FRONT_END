@@ -1,4 +1,9 @@
-import { LOADING, SUCCESS, ERROR, GET_BALANCE } from '../../types/index';
+import {
+  LOADING,
+  SUCCESS,
+  ERROR,
+  GET_BALANCE
+} from '../../../core/types/index';
 
 export const getStripeBalance = stripe => {
   return dispatch => {

@@ -1,20 +1,21 @@
 import React from 'react';
-import Header from '../Shared/Header';
+import Header from '../../../Shared/Header';
 import Paper from '@material-ui/core/Paper';
 import Grid from '@material-ui/core/Grid';
 import styles from './dashboard.module.css';
 
-import InboxIcon from '@material-ui/icons/Inbox';
-
-import List from '@material-ui/core/List';
-import ListItem from '@material-ui/core/ListItem';
-import ListItemIcon from '@material-ui/core/ListItemIcon';
-import ListItemText from '@material-ui/core/ListItemText';
-import Typography from '@material-ui/core/Typography';
-
-import MeetingRoom from '../MeetingRoom/MeetingRoom';
-import { BrowserRouter as Router, Switch, Route, Link } from 'react-router-dom';
+import MeetingRoom from './MeetingRoom/MeetingRoom';
+import {
+  BrowserRouter as Switch,
+  Route,
+  Link,
+  Redirect,
+  withRouter
+} from 'react-router-dom';
 import SideMenu from './SideMenu';
+import QuickTest from './QuickTest/QuickTest';
+import UploadAudio from './UploadAudio/UploadAudio';
+import InviteRobo from './InviteRobo/InviteRobo';
 
 class Dashboard extends React.Component {
   constructor(props) {
@@ -24,6 +25,8 @@ class Dashboard extends React.Component {
   }
   handleListItemClick(event, index) {}
   render() {
+    const { match, location, history } = this.props;
+    console.log(match, location, history);
     return (
       <div>
         <Header isLogged={this.props.isLogged}></Header>
@@ -33,7 +36,11 @@ class Dashboard extends React.Component {
           </Grid>
           <Grid item xs={12} sm={9}>
             <Paper className={styles.paper}>
-              <Route path={`/dashboard/meetingroom`} component={MeetingRoom} />
+              <Redirect from="/" to="/dashboard/inviterobo" />
+              <Route path={`/dashboard/meetings`} component={MeetingRoom} />
+              <Route path={`/dashboard/inviterobo`} component={InviteRobo} />
+              <Route path={`/dashboard/quicktest`} component={QuickTest} />
+              <Route path={`/dashboard/uploadaudio`} component={UploadAudio} />
             </Paper>
           </Grid>
         </Grid>
