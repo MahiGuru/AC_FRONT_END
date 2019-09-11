@@ -8,8 +8,14 @@ import ListItemIcon from '@material-ui/core/ListItemIcon';
 import ListItemText from '@material-ui/core/ListItemText';
 import Typography from '@material-ui/core/Typography';
 
-import { BrowserRouter as Route, Link } from 'react-router-dom';
-
+// import { BrowserRouter as Route, Link, withRouter } from 'react-router-dom';
+import {
+  BrowserRouter as Switch,
+  Route,
+  Link,
+  Redirect,
+  withRouter
+} from 'react-router-dom';
 class SideMenu extends React.Component {
   constructor(props) {
     super(props);
